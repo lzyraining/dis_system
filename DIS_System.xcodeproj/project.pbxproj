@@ -1,0 +1,665 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F18040B1CEA71660002ECBC /* DoctorSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F18040A1CEA71660002ECBC /* DoctorSetupViewController.m */; };
+		2FBD75FE1CE66CD800BC6095 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FBD75FC1CE66CD800BC6095 /* MBProgressHUD.m */; };
+		2FBD76001CE66F3300BC6095 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FBD75FF1CE66F3300BC6095 /* MessageUI.framework */; };
+		2FBD76041CE674EC00BC6095 /* DoctorRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FBD76031CE674EC00BC6095 /* DoctorRegisterViewController.m */; };
+		2FC5FA1D1CED553000851C66 /* doctorBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FC5FA1B1CED553000851C66 /* doctorBG.png */; };
+		2FC5FA1E1CED553000851C66 /* patientBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FC5FA1C1CED553000851C66 /* patientBG.png */; };
+		2FD5A51E1CE62F6100912D21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD5A51D1CE62F6100912D21 /* main.m */; };
+		2FD5A5211CE62F6100912D21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD5A5201CE62F6100912D21 /* AppDelegate.m */; };
+		2FD5A5241CE62F6100912D21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD5A5231CE62F6100912D21 /* ViewController.m */; };
+		2FD5A5271CE62F6100912D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD5A5251CE62F6100912D21 /* Main.storyboard */; };
+		2FD5A52A1CE62F6100912D21 /* DIS_System.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FD5A5281CE62F6100912D21 /* DIS_System.xcdatamodeld */; };
+		2FD5A52C1CE62F6100912D21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FD5A52B1CE62F6100912D21 /* Assets.xcassets */; };
+		2FD5A52F1CE62F6100912D21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD5A52D1CE62F6100912D21 /* LaunchScreen.storyboard */; };
+		2FE720BB1CEE0A1E00F10A55 /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE720BA1CEE0A1E00F10A55 /* ReviewViewController.m */; };
+		2FE720BE1CEE0A4C00F10A55 /* RecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE720BD1CEE0A4C00F10A55 /* RecordsViewController.m */; };
+		595EDD7E69B6227EC320BAB8 /* libPods-DIS_System.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1D68D1CDE72C26515FD905 /* libPods-DIS_System.a */; };
+		9C60C1441CE6871200A31B69 /* CustomerRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C60C1431CE6871200A31B69 /* CustomerRegisterViewController.m */; };
+		9CA86B231CE9BB6600CB00F9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA86B221CE9BB6600CB00F9 /* LoginViewController.m */; };
+		9CA86B2F1CEA22BB00CB00F9 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA86B241CEA22BB00CB00F9 /* AppIcon.png */; };
+		9CA86B301CEA22BB00CB00F9 /* Patient.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA86B251CEA22BB00CB00F9 /* Patient.png */; };
+		9CA86B311CEA22BB00CB00F9 /* Doctor.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA86B261CEA22BB00CB00F9 /* Doctor.png */; };
+		9CA86B321CEA22BB00CB00F9 /* Cardiologist.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA86B271CEA22BB00CB00F9 /* Cardiologist.png */; };
+		9CA86B331CEA22BB00CB00F9 /* Dentist.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA86B281CEA22BB00CB00F9 /* Dentist.png */; };
+		9CA86B341CEA22BB00CB00F9 /* Dermatologist.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA86B291CEA22BB00CB00F9 /* Dermatologist.png */; };
+		9CA86B351CEA22BB00CB00F9 /* Gynecologist.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA86B2A1CEA22BB00CB00F9 /* Gynecologist.png */; };
+		9CA86B361CEA22BB00CB00F9 /* Ophthalmologist.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA86B2B1CEA22BB00CB00F9 /* Ophthalmologist.png */; };
+		9CA86B371CEA22BB00CB00F9 /* Psychologist.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA86B2C1CEA22BB00CB00F9 /* Psychologist.png */; };
+		9CA86B381CEA22BB00CB00F9 /* hospital_room.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA86B2D1CEA22BB00CB00F9 /* hospital_room.png */; };
+		9CA86B391CEA22BB00CB00F9 /* unknownavatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA86B2E1CEA22BB00CB00F9 /* unknownavatar.png */; };
+		9CA86B3C1CEA264600CB00F9 /* DoctorCategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA86B3B1CEA264600CB00F9 /* DoctorCategoryCollectionViewCell.m */; };
+		9CA86B3F1CEA293500CB00F9 /* DoctorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA86B3E1CEA293500CB00F9 /* DoctorListViewController.m */; };
+		9CA86B421CEA2AD700CB00F9 /* DoctorListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA86B411CEA2AD700CB00F9 /* DoctorListTableViewCell.m */; };
+		9CA86B461CEA37D800CB00F9 /* DoctorDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA86B451CEA37D800CB00F9 /* DoctorDetailViewController.m */; };
+		9CA86B781CEB611E00CB00F9 /* CalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA86B751CEB611E00CB00F9 /* CalendarCell.m */; };
+		9CA86B791CEB611E00CB00F9 /* Month.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA86B771CEB611E00CB00F9 /* Month.m */; };
+		9CA86B7C1CEB615600CB00F9 /* AppointmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA86B7B1CEB615600CB00F9 /* AppointmentViewController.m */; };
+		9CEA179A1CECF736000D383C /* AppointmentListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEA17991CECF736000D383C /* AppointmentListTableViewCell.m */; };
+		9CEA17A11CED2FBA000D383C /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA179F1CED2FBA000D383C /* left_arrow.png */; };
+		9CEA17A21CED2FBA000D383C /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA17A01CED2FBA000D383C /* right_arrow.png */; };
+		9CEA17AA1CED3716000D383C /* button-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA17A91CED3716000D383C /* button-2.png */; };
+		9CEA17AC1CEE4E15000D383C /* DISSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CEA17AB1CEE4E15000D383C /* DISSplash.png */; };
+		9CEC25C21CE63E6F00CB1993 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CEC25C11CE63E6F00CB1993 /* Main2.storyboard */; };
+		9CEC25C51CE6406F00CB1993 /* DoctorHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC25C41CE6406F00CB1993 /* DoctorHomeViewController.m */; };
+		9CEC25C81CE6409500CB1993 /* CustomerHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC25C71CE6409500CB1993 /* CustomerHomeViewController.m */; };
+		9CFAEDEE1CEBC18500AB4F4E /* libBolts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFAEDEB1CEBC18500AB4F4E /* libBolts.a */; };
+		9CFAEDEF1CEBC18500AB4F4E /* libMBCalendarKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFAEDEC1CEBC18500AB4F4E /* libMBCalendarKit.a */; };
+		9CFAEDF01CEBC18500AB4F4E /* libParse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFAEDED1CEBC18500AB4F4E /* libParse.a */; };
+		9CFAEDF21CEBC2DF00AB4F4E /* CKCalendarInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1804071CEA62790002ECBC /* CKCalendarInstance.m */; };
+		9CFAEDF51CEBD00600AB4F4E /* AppointmentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFAEDF41CEBD00600AB4F4E /* AppointmentListTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2F1804061CEA62790002ECBC /* CKCalendarInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCalendarInstance.h; sourceTree = "<group>"; };
+		2F1804071CEA62790002ECBC /* CKCalendarInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarInstance.m; sourceTree = "<group>"; };
+		2F1804091CEA71660002ECBC /* DoctorSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorSetupViewController.h; sourceTree = "<group>"; };
+		2F18040A1CEA71660002ECBC /* DoctorSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorSetupViewController.m; sourceTree = "<group>"; };
+		2FBD75FC1CE66CD800BC6095 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		2FBD75FD1CE66CD800BC6095 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		2FBD75FF1CE66F3300BC6095 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		2FBD76021CE674EC00BC6095 /* DoctorRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorRegisterViewController.h; sourceTree = "<group>"; };
+		2FBD76031CE674EC00BC6095 /* DoctorRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorRegisterViewController.m; sourceTree = "<group>"; };
+		2FC5FA1B1CED553000851C66 /* doctorBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doctorBG.png; sourceTree = "<group>"; };
+		2FC5FA1C1CED553000851C66 /* patientBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = patientBG.png; sourceTree = "<group>"; };
+		2FD5A5191CE62F6100912D21 /* DIS_System.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIS_System.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FD5A51D1CE62F6100912D21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2FD5A51F1CE62F6100912D21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2FD5A5201CE62F6100912D21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2FD5A5221CE62F6100912D21 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2FD5A5231CE62F6100912D21 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2FD5A5261CE62F6100912D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2FD5A5291CE62F6100912D21 /* DIS_System.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DIS_System.xcdatamodel; sourceTree = "<group>"; };
+		2FD5A52B1CE62F6100912D21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2FD5A52E1CE62F6100912D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2FD5A5301CE62F6100912D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FE720B91CEE0A1E00F10A55 /* ReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
+		2FE720BA1CEE0A1E00F10A55 /* ReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewViewController.m; sourceTree = "<group>"; };
+		2FE720BC1CEE0A4C00F10A55 /* RecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordsViewController.h; sourceTree = "<group>"; };
+		2FE720BD1CEE0A4C00F10A55 /* RecordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsViewController.m; sourceTree = "<group>"; };
+		3D413C95597B0CACA9D1FE8F /* Pods-DIS_System.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIS_System.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DIS_System/Pods-DIS_System.debug.xcconfig"; sourceTree = "<group>"; };
+		7F1D68D1CDE72C26515FD905 /* libPods-DIS_System.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DIS_System.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C60C1421CE6871200A31B69 /* CustomerRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerRegisterViewController.h; sourceTree = "<group>"; };
+		9C60C1431CE6871200A31B69 /* CustomerRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerRegisterViewController.m; sourceTree = "<group>"; };
+		9CA86B201CE9BA6600CB00F9 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9CA86B211CE9BB6600CB00F9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9CA86B221CE9BB6600CB00F9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9CA86B241CEA22BB00CB00F9 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		9CA86B251CEA22BB00CB00F9 /* Patient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Patient.png; sourceTree = "<group>"; };
+		9CA86B261CEA22BB00CB00F9 /* Doctor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Doctor.png; sourceTree = "<group>"; };
+		9CA86B271CEA22BB00CB00F9 /* Cardiologist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cardiologist.png; sourceTree = "<group>"; };
+		9CA86B281CEA22BB00CB00F9 /* Dentist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dentist.png; sourceTree = "<group>"; };
+		9CA86B291CEA22BB00CB00F9 /* Dermatologist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dermatologist.png; sourceTree = "<group>"; };
+		9CA86B2A1CEA22BB00CB00F9 /* Gynecologist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gynecologist.png; sourceTree = "<group>"; };
+		9CA86B2B1CEA22BB00CB00F9 /* Ophthalmologist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ophthalmologist.png; sourceTree = "<group>"; };
+		9CA86B2C1CEA22BB00CB00F9 /* Psychologist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Psychologist.png; sourceTree = "<group>"; };
+		9CA86B2D1CEA22BB00CB00F9 /* hospital_room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital_room.png; sourceTree = "<group>"; };
+		9CA86B2E1CEA22BB00CB00F9 /* unknownavatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unknownavatar.png; sourceTree = "<group>"; };
+		9CA86B3A1CEA264600CB00F9 /* DoctorCategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorCategoryCollectionViewCell.h; sourceTree = "<group>"; };
+		9CA86B3B1CEA264600CB00F9 /* DoctorCategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorCategoryCollectionViewCell.m; sourceTree = "<group>"; };
+		9CA86B3D1CEA293500CB00F9 /* DoctorListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorListViewController.h; sourceTree = "<group>"; };
+		9CA86B3E1CEA293500CB00F9 /* DoctorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorListViewController.m; sourceTree = "<group>"; };
+		9CA86B401CEA2AD700CB00F9 /* DoctorListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorListTableViewCell.h; sourceTree = "<group>"; };
+		9CA86B411CEA2AD700CB00F9 /* DoctorListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorListTableViewCell.m; sourceTree = "<group>"; };
+		9CA86B441CEA37D800CB00F9 /* DoctorDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorDetailViewController.h; sourceTree = "<group>"; };
+		9CA86B451CEA37D800CB00F9 /* DoctorDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorDetailViewController.m; sourceTree = "<group>"; };
+		9CA86B741CEB611E00CB00F9 /* CalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarCell.h; sourceTree = "<group>"; };
+		9CA86B751CEB611E00CB00F9 /* CalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarCell.m; sourceTree = "<group>"; };
+		9CA86B761CEB611E00CB00F9 /* Month.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Month.h; sourceTree = "<group>"; };
+		9CA86B771CEB611E00CB00F9 /* Month.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Month.m; sourceTree = "<group>"; };
+		9CA86B7A1CEB615600CB00F9 /* AppointmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentViewController.h; sourceTree = "<group>"; };
+		9CA86B7B1CEB615600CB00F9 /* AppointmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentViewController.m; sourceTree = "<group>"; };
+		9CEA17981CECF736000D383C /* AppointmentListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentListTableViewCell.h; sourceTree = "<group>"; };
+		9CEA17991CECF736000D383C /* AppointmentListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentListTableViewCell.m; sourceTree = "<group>"; };
+		9CEA179F1CED2FBA000D383C /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
+		9CEA17A01CED2FBA000D383C /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
+		9CEA17A91CED3716000D383C /* button-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-2.png"; sourceTree = "<group>"; };
+		9CEA17AB1CEE4E15000D383C /* DISSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DISSplash.png; sourceTree = "<group>"; };
+		9CEC25C11CE63E6F00CB1993 /* Main2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
+		9CEC25C31CE6406F00CB1993 /* DoctorHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorHomeViewController.h; sourceTree = "<group>"; };
+		9CEC25C41CE6406F00CB1993 /* DoctorHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorHomeViewController.m; sourceTree = "<group>"; };
+		9CEC25C61CE6409500CB1993 /* CustomerHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerHomeViewController.h; sourceTree = "<group>"; };
+		9CEC25C71CE6409500CB1993 /* CustomerHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerHomeViewController.m; sourceTree = "<group>"; };
+		9CFAEDEB1CEBC18500AB4F4E /* libBolts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBolts.a; path = "../../../../../Library/Developer/Xcode/DerivedData/DIS_System-dqtfycocmpkhufajqqbxlstwfqro/Build/Products/Debug-iphonesimulator/Bolts/libBolts.a"; sourceTree = "<group>"; };
+		9CFAEDEC1CEBC18500AB4F4E /* libMBCalendarKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMBCalendarKit.a; path = "../../../../../Library/Developer/Xcode/DerivedData/DIS_System-dqtfycocmpkhufajqqbxlstwfqro/Build/Products/Debug-iphonesimulator/MBCalendarKit/libMBCalendarKit.a"; sourceTree = "<group>"; };
+		9CFAEDED1CEBC18500AB4F4E /* libParse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libParse.a; path = "../../../../../Library/Developer/Xcode/DerivedData/DIS_System-dqtfycocmpkhufajqqbxlstwfqro/Build/Products/Debug-iphonesimulator/Parse/libParse.a"; sourceTree = "<group>"; };
+		9CFAEDF31CEBD00600AB4F4E /* AppointmentListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentListTableViewController.h; sourceTree = "<group>"; };
+		9CFAEDF41CEBD00600AB4F4E /* AppointmentListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentListTableViewController.m; sourceTree = "<group>"; };
+		BE71AA532D401ACE962E4F5B /* Pods-DIS_System.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIS_System.release.xcconfig"; path = "Pods/Target Support Files/Pods-DIS_System/Pods-DIS_System.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2FD5A5161CE62F6100912D21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CFAEDEE1CEBC18500AB4F4E /* libBolts.a in Frameworks */,
+				9CFAEDEF1CEBC18500AB4F4E /* libMBCalendarKit.a in Frameworks */,
+				9CFAEDF01CEBC18500AB4F4E /* libParse.a in Frameworks */,
+				2FBD76001CE66F3300BC6095 /* MessageUI.framework in Frameworks */,
+				595EDD7E69B6227EC320BAB8 /* libPods-DIS_System.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FBD76011CE66F8400BC6095 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9CEA17AB1CEE4E15000D383C /* DISSplash.png */,
+				9CEA179F1CED2FBA000D383C /* left_arrow.png */,
+				9CEA17A01CED2FBA000D383C /* right_arrow.png */,
+				9CA86B241CEA22BB00CB00F9 /* AppIcon.png */,
+				9CA86B251CEA22BB00CB00F9 /* Patient.png */,
+				9CA86B261CEA22BB00CB00F9 /* Doctor.png */,
+				9CA86B271CEA22BB00CB00F9 /* Cardiologist.png */,
+				9CA86B281CEA22BB00CB00F9 /* Dentist.png */,
+				9CA86B291CEA22BB00CB00F9 /* Dermatologist.png */,
+				9CA86B2A1CEA22BB00CB00F9 /* Gynecologist.png */,
+				9CEA17A91CED3716000D383C /* button-2.png */,
+				9CA86B2B1CEA22BB00CB00F9 /* Ophthalmologist.png */,
+				9CA86B2C1CEA22BB00CB00F9 /* Psychologist.png */,
+				9CA86B2D1CEA22BB00CB00F9 /* hospital_room.png */,
+				9CA86B2E1CEA22BB00CB00F9 /* unknownavatar.png */,
+				2FC5FA1B1CED553000851C66 /* doctorBG.png */,
+				2FC5FA1C1CED553000851C66 /* patientBG.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		2FD5A5101CE62F6100912D21 = {
+			isa = PBXGroup;
+			children = (
+				2FD5A51B1CE62F6100912D21 /* DIS_System */,
+				2FD5A51A1CE62F6100912D21 /* Products */,
+				EE0DEB0B5ADD92C66C93B6D5 /* Pods */,
+				79D7E968951D9D21DDD1D798 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2FD5A51A1CE62F6100912D21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FD5A5191CE62F6100912D21 /* DIS_System.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2FD5A51B1CE62F6100912D21 /* DIS_System */ = {
+			isa = PBXGroup;
+			children = (
+				2FBD76011CE66F8400BC6095 /* images */,
+				2FD5A5221CE62F6100912D21 /* ViewController.h */,
+				2FD5A5231CE62F6100912D21 /* ViewController.m */,
+				9CA86B211CE9BB6600CB00F9 /* LoginViewController.h */,
+				9CA86B221CE9BB6600CB00F9 /* LoginViewController.m */,
+				2FD5A5361CE6449500912D21 /* Doctor */,
+				2FD5A5371CE6449D00912D21 /* Customer */,
+				2FBD75FC1CE66CD800BC6095 /* MBProgressHUD.m */,
+				2FBD75FD1CE66CD800BC6095 /* MBProgressHUD.h */,
+				2FD5A51F1CE62F6100912D21 /* AppDelegate.h */,
+				2FD5A5201CE62F6100912D21 /* AppDelegate.m */,
+				2FD5A52D1CE62F6100912D21 /* LaunchScreen.storyboard */,
+				2FD5A5301CE62F6100912D21 /* Info.plist */,
+				2FD5A5281CE62F6100912D21 /* DIS_System.xcdatamodeld */,
+				9CA86B201CE9BA6600CB00F9 /* PrefixHeader.pch */,
+				2FD5A52B1CE62F6100912D21 /* Assets.xcassets */,
+				2FD5A51C1CE62F6100912D21 /* Supporting Files */,
+			);
+			path = DIS_System;
+			sourceTree = "<group>";
+		};
+		2FD5A51C1CE62F6100912D21 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2FD5A51D1CE62F6100912D21 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2FD5A5361CE6449500912D21 /* Doctor */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC25C31CE6406F00CB1993 /* DoctorHomeViewController.h */,
+				9CEC25C41CE6406F00CB1993 /* DoctorHomeViewController.m */,
+				2F1804091CEA71660002ECBC /* DoctorSetupViewController.h */,
+				2F18040A1CEA71660002ECBC /* DoctorSetupViewController.m */,
+				2FBD76021CE674EC00BC6095 /* DoctorRegisterViewController.h */,
+				2FBD76031CE674EC00BC6095 /* DoctorRegisterViewController.m */,
+				2FE720B91CEE0A1E00F10A55 /* ReviewViewController.h */,
+				2FE720BA1CEE0A1E00F10A55 /* ReviewViewController.m */,
+				2FE720BC1CEE0A4C00F10A55 /* RecordsViewController.h */,
+				2FE720BD1CEE0A4C00F10A55 /* RecordsViewController.m */,
+				2F1804061CEA62790002ECBC /* CKCalendarInstance.h */,
+				2F1804071CEA62790002ECBC /* CKCalendarInstance.m */,
+				2FD5A5251CE62F6100912D21 /* Main.storyboard */,
+			);
+			name = Doctor;
+			sourceTree = "<group>";
+		};
+		2FD5A5371CE6449D00912D21 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				9C60C1421CE6871200A31B69 /* CustomerRegisterViewController.h */,
+				9C60C1431CE6871200A31B69 /* CustomerRegisterViewController.m */,
+				9CA86B431CEA2C6700CB00F9 /* DoctorList */,
+				9CA86B471CEA37E000CB00F9 /* MakeAppointment */,
+				9CFAEDF61CEBD00D00AB4F4E /* AppointmentList */,
+				9CEC25C11CE63E6F00CB1993 /* Main2.storyboard */,
+			);
+			name = Customer;
+			sourceTree = "<group>";
+		};
+		79D7E968951D9D21DDD1D798 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CFAEDEB1CEBC18500AB4F4E /* libBolts.a */,
+				9CFAEDEC1CEBC18500AB4F4E /* libMBCalendarKit.a */,
+				9CFAEDED1CEBC18500AB4F4E /* libParse.a */,
+				2FBD75FF1CE66F3300BC6095 /* MessageUI.framework */,
+				7F1D68D1CDE72C26515FD905 /* libPods-DIS_System.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9CA86B431CEA2C6700CB00F9 /* DoctorList */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC25C61CE6409500CB1993 /* CustomerHomeViewController.h */,
+				9CEC25C71CE6409500CB1993 /* CustomerHomeViewController.m */,
+				9CA86B3A1CEA264600CB00F9 /* DoctorCategoryCollectionViewCell.h */,
+				9CA86B3B1CEA264600CB00F9 /* DoctorCategoryCollectionViewCell.m */,
+				9CA86B3D1CEA293500CB00F9 /* DoctorListViewController.h */,
+				9CA86B3E1CEA293500CB00F9 /* DoctorListViewController.m */,
+				9CA86B401CEA2AD700CB00F9 /* DoctorListTableViewCell.h */,
+				9CA86B411CEA2AD700CB00F9 /* DoctorListTableViewCell.m */,
+			);
+			name = DoctorList;
+			sourceTree = "<group>";
+		};
+		9CA86B471CEA37E000CB00F9 /* MakeAppointment */ = {
+			isa = PBXGroup;
+			children = (
+				9CA86B441CEA37D800CB00F9 /* DoctorDetailViewController.h */,
+				9CA86B451CEA37D800CB00F9 /* DoctorDetailViewController.m */,
+				9CA86B7A1CEB615600CB00F9 /* AppointmentViewController.h */,
+				9CA86B7B1CEB615600CB00F9 /* AppointmentViewController.m */,
+				9CA86B741CEB611E00CB00F9 /* CalendarCell.h */,
+				9CA86B751CEB611E00CB00F9 /* CalendarCell.m */,
+				9CA86B761CEB611E00CB00F9 /* Month.h */,
+				9CA86B771CEB611E00CB00F9 /* Month.m */,
+			);
+			name = MakeAppointment;
+			sourceTree = "<group>";
+		};
+		9CFAEDF61CEBD00D00AB4F4E /* AppointmentList */ = {
+			isa = PBXGroup;
+			children = (
+				9CFAEDF31CEBD00600AB4F4E /* AppointmentListTableViewController.h */,
+				9CFAEDF41CEBD00600AB4F4E /* AppointmentListTableViewController.m */,
+				9CEA17981CECF736000D383C /* AppointmentListTableViewCell.h */,
+				9CEA17991CECF736000D383C /* AppointmentListTableViewCell.m */,
+			);
+			name = AppointmentList;
+			sourceTree = "<group>";
+		};
+		EE0DEB0B5ADD92C66C93B6D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D413C95597B0CACA9D1FE8F /* Pods-DIS_System.debug.xcconfig */,
+				BE71AA532D401ACE962E4F5B /* Pods-DIS_System.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2FD5A5181CE62F6100912D21 /* DIS_System */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FD5A5331CE62F6100912D21 /* Build configuration list for PBXNativeTarget "DIS_System" */;
+			buildPhases = (
+				F5B3D47F2E1AD7ABF9A61DD0 /* 📦 Check Pods Manifest.lock */,
+				2FD5A5151CE62F6100912D21 /* Sources */,
+				2FD5A5161CE62F6100912D21 /* Frameworks */,
+				2FD5A5171CE62F6100912D21 /* Resources */,
+				86C7737C8E9291984762E94D /* 📦 Embed Pods Frameworks */,
+				4CBEA052FDAE5AE5C7C5556A /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DIS_System;
+			productName = DIS_System;
+			productReference = 2FD5A5191CE62F6100912D21 /* DIS_System.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2FD5A5111CE62F6100912D21 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Yang;
+				TargetAttributes = {
+					2FD5A5181CE62F6100912D21 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 3QVX2NYBCN;
+					};
+				};
+			};
+			buildConfigurationList = 2FD5A5141CE62F6100912D21 /* Build configuration list for PBXProject "DIS_System" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2FD5A5101CE62F6100912D21;
+			productRefGroup = 2FD5A51A1CE62F6100912D21 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2FD5A5181CE62F6100912D21 /* DIS_System */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2FD5A5171CE62F6100912D21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CA86B361CEA22BB00CB00F9 /* Ophthalmologist.png in Resources */,
+				9CA86B341CEA22BB00CB00F9 /* Dermatologist.png in Resources */,
+				9CA86B2F1CEA22BB00CB00F9 /* AppIcon.png in Resources */,
+				9CA86B391CEA22BB00CB00F9 /* unknownavatar.png in Resources */,
+				9CA86B331CEA22BB00CB00F9 /* Dentist.png in Resources */,
+				9CA86B381CEA22BB00CB00F9 /* hospital_room.png in Resources */,
+				9CEA17AC1CEE4E15000D383C /* DISSplash.png in Resources */,
+				9CEA17A11CED2FBA000D383C /* left_arrow.png in Resources */,
+				2FD5A52F1CE62F6100912D21 /* LaunchScreen.storyboard in Resources */,
+				9CEA17A21CED2FBA000D383C /* right_arrow.png in Resources */,
+				2FD5A52C1CE62F6100912D21 /* Assets.xcassets in Resources */,
+				9CA86B351CEA22BB00CB00F9 /* Gynecologist.png in Resources */,
+				9CA86B371CEA22BB00CB00F9 /* Psychologist.png in Resources */,
+				9CEA17AA1CED3716000D383C /* button-2.png in Resources */,
+				2FC5FA1D1CED553000851C66 /* doctorBG.png in Resources */,
+				2FC5FA1E1CED553000851C66 /* patientBG.png in Resources */,
+				9CA86B301CEA22BB00CB00F9 /* Patient.png in Resources */,
+				9CEC25C21CE63E6F00CB1993 /* Main2.storyboard in Resources */,
+				9CA86B311CEA22BB00CB00F9 /* Doctor.png in Resources */,
+				2FD5A5271CE62F6100912D21 /* Main.storyboard in Resources */,
+				9CA86B321CEA22BB00CB00F9 /* Cardiologist.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CBEA052FDAE5AE5C7C5556A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DIS_System/Pods-DIS_System-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86C7737C8E9291984762E94D /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DIS_System/Pods-DIS_System-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5B3D47F2E1AD7ABF9A61DD0 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2FD5A5151CE62F6100912D21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CFAEDF21CEBC2DF00AB4F4E /* CKCalendarInstance.m in Sources */,
+				2FBD76041CE674EC00BC6095 /* DoctorRegisterViewController.m in Sources */,
+				2FD5A5241CE62F6100912D21 /* ViewController.m in Sources */,
+				2FD5A5211CE62F6100912D21 /* AppDelegate.m in Sources */,
+				9CA86B3F1CEA293500CB00F9 /* DoctorListViewController.m in Sources */,
+				9CA86B421CEA2AD700CB00F9 /* DoctorListTableViewCell.m in Sources */,
+				2FE720BB1CEE0A1E00F10A55 /* ReviewViewController.m in Sources */,
+				2FD5A51E1CE62F6100912D21 /* main.m in Sources */,
+				2FE720BE1CEE0A4C00F10A55 /* RecordsViewController.m in Sources */,
+				9CA86B7C1CEB615600CB00F9 /* AppointmentViewController.m in Sources */,
+				9CEA179A1CECF736000D383C /* AppointmentListTableViewCell.m in Sources */,
+				9CA86B231CE9BB6600CB00F9 /* LoginViewController.m in Sources */,
+				9CEC25C51CE6406F00CB1993 /* DoctorHomeViewController.m in Sources */,
+				9CA86B791CEB611E00CB00F9 /* Month.m in Sources */,
+				2FD5A52A1CE62F6100912D21 /* DIS_System.xcdatamodeld in Sources */,
+				9CA86B781CEB611E00CB00F9 /* CalendarCell.m in Sources */,
+				9C60C1441CE6871200A31B69 /* CustomerRegisterViewController.m in Sources */,
+				2F18040B1CEA71660002ECBC /* DoctorSetupViewController.m in Sources */,
+				9CEC25C81CE6409500CB1993 /* CustomerHomeViewController.m in Sources */,
+				9CA86B3C1CEA264600CB00F9 /* DoctorCategoryCollectionViewCell.m in Sources */,
+				9CFAEDF51CEBD00600AB4F4E /* AppointmentListTableViewController.m in Sources */,
+				9CA86B461CEA37D800CB00F9 /* DoctorDetailViewController.m in Sources */,
+				2FBD75FE1CE66CD800BC6095 /* MBProgressHUD.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2FD5A5251CE62F6100912D21 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FD5A5261CE62F6100912D21 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2FD5A52D1CE62F6100912D21 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FD5A52E1CE62F6100912D21 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2FD5A5311CE62F6100912D21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2FD5A5321CE62F6100912D21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2FD5A5341CE62F6100912D21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D413C95597B0CACA9D1FE8F /* Pods-DIS_System.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DIS_System/PrefixHeader.pch;
+				INFOPLIST_FILE = DIS_System/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "iOS.DIS-System";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		2FD5A5351CE62F6100912D21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE71AA532D401ACE962E4F5B /* Pods-DIS_System.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DIS_System/PrefixHeader.pch;
+				INFOPLIST_FILE = DIS_System/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "iOS.DIS-System";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2FD5A5141CE62F6100912D21 /* Build configuration list for PBXProject "DIS_System" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FD5A5311CE62F6100912D21 /* Debug */,
+				2FD5A5321CE62F6100912D21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FD5A5331CE62F6100912D21 /* Build configuration list for PBXNativeTarget "DIS_System" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FD5A5341CE62F6100912D21 /* Debug */,
+				2FD5A5351CE62F6100912D21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2FD5A5281CE62F6100912D21 /* DIS_System.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2FD5A5291CE62F6100912D21 /* DIS_System.xcdatamodel */,
+			);
+			currentVersion = 2FD5A5291CE62F6100912D21 /* DIS_System.xcdatamodel */;
+			path = DIS_System.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2FD5A5111CE62F6100912D21 /* Project object */;
+}
