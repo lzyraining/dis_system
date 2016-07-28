@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface DoctorListViewController : UIViewController
+@interface DoctorListViewController : UIViewController<CLLocationManagerDelegate,MKMapViewDelegate>
 
 @property (strong, nonatomic) NSString *specialization;
 

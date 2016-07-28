@@ -32,6 +32,8 @@
 
 @end
 
+static int pressNum;
+
 @implementation AppointmentViewController
 
 - (void)viewDidLoad {
@@ -95,7 +97,7 @@
 }
 
 - (void)refreshCalender {
-    _monthLbl.text = [NSString stringWithFormat:@"%.2i - %i",[month month],[month year]];
+    _monthLbl.text = [NSString stringWithFormat:@"%.2li - %li",(long)[month month],(long)[month year]];
     
     [_collectionView reloadData];
 }
@@ -164,7 +166,7 @@
             [cell.dateLbl setText:@""];
         }
         else {
-            [cell.dateLbl setText:[NSString stringWithFormat:@"%i",day]];
+            [cell.dateLbl setText:[NSString stringWithFormat:@"%li",(long)day]];
             if ((day >= [todayComps day] || [month month] > [todayComps month]) && ([self isAvaliableWeekDay:[month weekday:day]]) ) {
                 cell.backgroundColor = [UIColor colorWithRed:255 / 255.0 green:160 / 255.0 blue:0 / 255.0 alpha:1.0];
                 cell.dateLbl.textColor = [UIColor whiteColor];
@@ -222,7 +224,7 @@
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *dateStr = [NSString stringWithFormat:@"%i %.2i %.2i %@", [month year], [month month], selectedDay, weekdayArr[[month weekday:selectedDay] - 1]];
+    NSString *dateStr = [NSString stringWithFormat:@"%li %.2li %.2li %@", (long)[month year], (long)[month month], (long)selectedDay, weekdayArr[[month weekday:selectedDay] - 1]];
     NSString *msg = [NSString stringWithFormat:@"Do you want to make an appointment with Doctor %@ on %@ at %@:00?", _doctor[@"Name"], dateStr, timeSlots[indexPath.row]];
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Confirm" message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction  *_Nonnull action) {
@@ -258,18 +260,33 @@
     NSDate *last = [month lastMonth];
     if (last == [last  laterDate:today] || [last isEqualToDate:today]) {
         month.monthDate = [month lastMonth];
+        pressNum--;
         [self refreshCalender];
     }
 }
 
 - (IBAction)nextBtn_Pressed:(id)sender {
-    month.monthDate = [month nextMonth];
-    [self refreshCalender];
+    if (pressNum <= 3) {
+        month.monthDate = [month nextMonth];
+        pressNum++;
+        [self refreshCalender];
+    }
+    if (pressNum > 3) {
+        [self showAlertWithTile:@"Alert" andmessage:@"You cannot make reservation beyond three months"];
+    }
+    
     
 }
 
 - (IBAction)apptListBtn_Pressed:(id)sender {
     AppointmentListTableViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"AppointmentListTableViewController"];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+-(void) showAlertWithTile:(NSString *)title andmessage:(NSString *)message{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alertController addAction:action];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 @end
