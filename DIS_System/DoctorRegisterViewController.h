@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DoctorRegisterViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate>
+@interface DoctorRegisterViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate,UIGestureRecognizerDelegate>
 
 @end

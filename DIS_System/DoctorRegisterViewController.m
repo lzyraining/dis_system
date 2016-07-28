@@ -36,6 +36,12 @@
     [super viewDidLoad];
     _scrollTime = 0;
     // Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touch:)];
+    [recognizer setNumberOfTapsRequired:1];
+    [recognizer setNumberOfTouchesRequired:1];
+    [_scrollViewContents addGestureRecognizer:recognizer];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,23 +49,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)touch: (id)sender {
+    [_nameTxFd resignFirstResponder];
+    [_passwordTxFd resignFirstResponder];
+    [_mobileTxFd resignFirstResponder];
+    [_emailTxFd resignFirstResponder];
+    [_addressTxFd resignFirstResponder];
+    [_specializationTxFd resignFirstResponder];
+    [_degreeTxFd resignFirstResponder];
+    [_hospitalTxFd resignFirstResponder];
+    [_detailTxVw resignFirstResponder];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    _scrollTime++;
+    [_scrollViewContents setContentOffset:CGPointMake(0,30*_scrollTime) animated:YES];
     
     [textField resignFirstResponder];
     return YES;
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    
-    _scrollTime++;
-    [_scrollViewContents setContentOffset:CGPointMake(0,30*_scrollTime) animated:YES];
-    [textField resignFirstResponder];
-}
-
-
-
 - (IBAction)submitPressed:(id)sender {
-    if (_nameTxFd.text.length>0 && _passwordTxFd.text.length>0 && _mobileTxFd.text.length>0 && _emailTxFd.text.length>0 && _addressTxFd.text.length>0 && _specializationTxFd.text.length>0 && _degreeTxFd.text.length>0 && _hospitalTxFd.text.length>0 && _detailTxVw.text.length>0) {
+    if (_nameTxFd.text.length>0 && _passwordTxFd.text.length>0 && _mobileTxFd.text.length>0 && _emailTxFd.text.length>0 && _addressTxFd.text.length>0 && _specializationTxFd.text.length>0 && _degreeTxFd.text.length>0 && _hospitalTxFd.text.length>0 && _detailTxVw.text.length>0 && imgData != nil) {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
         PFQuery *pwdQuery = [PFQuery queryWithClassName:@"Doctors"];
@@ -107,7 +119,7 @@
         
     }
     else{
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"More info needed" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"All Fields are required" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction  *_Nonnull action) {
             
         }];

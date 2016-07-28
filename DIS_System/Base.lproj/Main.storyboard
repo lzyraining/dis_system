@@ -269,7 +269,7 @@
                                             <constraint firstAttribute="width" constant="200" id="jkq-j5-mM5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <connections>
                                             <outlet property="delegate" destination="4cJ-2n-tax" id="3tr-v5-ifh"/>
                                         </connections>
@@ -301,7 +301,7 @@
                                             <constraint firstAttribute="height" constant="30" id="glD-g0-jDM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad"/>
                                         <connections>
                                             <outlet property="delegate" destination="4cJ-2n-tax" id="s4j-90-z13"/>
                                         </connections>
@@ -333,7 +333,7 @@
                                             <constraint firstAttribute="width" constant="200" id="cgM-Uw-4hT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                         <connections>
                                             <outlet property="delegate" destination="4cJ-2n-tax" id="rCi-Ui-aCm"/>
                                         </connections>
@@ -355,7 +355,7 @@
                                             <constraint firstAttribute="height" constant="30" id="sCN-6L-qpm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                         <connections>
                                             <outlet property="delegate" destination="4cJ-2n-tax" id="YNa-9U-tda"/>
                                         </connections>
@@ -377,7 +377,7 @@
                                             <constraint firstAttribute="height" constant="30" id="jaG-eL-63e"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                         <connections>
                                             <outlet property="delegate" destination="4cJ-2n-tax" id="Laf-hV-VXS"/>
                                         </connections>
@@ -399,7 +399,7 @@
                                             <constraint firstAttribute="height" constant="30" id="Mzr-bd-xDl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                         <connections>
                                             <outlet property="delegate" destination="4cJ-2n-tax" id="Ctg-np-7PE"/>
                                         </connections>
@@ -412,7 +412,7 @@
                                             <constraint firstAttribute="height" constant="128" id="afG-eM-rBU"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYu-qk-Y5e">
                                         <rect key="frame" x="48" y="369" width="49" height="21"/>
@@ -455,7 +455,7 @@
                                             <constraint firstAttribute="width" constant="200" id="N55-Fn-SoS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                         <connections>
                                             <outlet property="delegate" destination="4cJ-2n-tax" id="jrZ-dp-Jzb"/>
                                         </connections>
