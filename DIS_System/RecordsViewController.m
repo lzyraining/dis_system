@@ -9,7 +9,7 @@
 #import "RecordsViewController.h"
 #import "PHistoryViewController.h"
 
-@interface RecordsViewController ()
+@interface RecordsViewController () <UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *patientTbView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sgmentBtn;
@@ -24,7 +24,16 @@
     [super viewDidLoad];
     self.title = @"Patients List";
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touch:)];
+    [recognizer setNumberOfTapsRequired:1];
+    [recognizer setNumberOfTouchesRequired:1];
+    [self.view addGestureRecognizer:recognizer];
 }
+
+-(void)touch: (id)sender {
+    [_searchBar resignFirstResponder];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
