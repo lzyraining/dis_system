@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		032B5F9E1D49CA4800A11338 /* AddPCaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032B5F9D1D49CA4800A11338 /* AddPCaseViewController.m */; };
+		032B5FA11D4A747F00A11338 /* PHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032B5FA01D4A747F00A11338 /* PHistoryViewController.m */; };
 		23AAD9BC1D49A93E00D94E44 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AAD9BB1D49A93E00D94E44 /* MapKit.framework */; };
 		2F18040B1CEA71660002ECBC /* DoctorSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F18040A1CEA71660002ECBC /* DoctorSetupViewController.m */; };
 		2FBD75FE1CE66CD800BC6095 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FBD75FC1CE66CD800BC6095 /* MBProgressHUD.m */; };
@@ -63,6 +64,8 @@
 /* Begin PBXFileReference section */
 		032B5F9C1D49CA4800A11338 /* AddPCaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPCaseViewController.h; sourceTree = "<group>"; };
 		032B5F9D1D49CA4800A11338 /* AddPCaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPCaseViewController.m; sourceTree = "<group>"; };
+		032B5F9F1D4A747F00A11338 /* PHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHistoryViewController.h; sourceTree = "<group>"; };
+		032B5FA01D4A747F00A11338 /* PHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHistoryViewController.m; sourceTree = "<group>"; };
 		23AAD9BB1D49A93E00D94E44 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2F1804061CEA62790002ECBC /* CKCalendarInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCalendarInstance.h; sourceTree = "<group>"; };
 		2F1804071CEA62790002ECBC /* CKCalendarInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarInstance.m; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 				032B5F9D1D49CA4800A11338 /* AddPCaseViewController.m */,
 				2FE720BC1CEE0A4C00F10A55 /* RecordsViewController.h */,
 				2FE720BD1CEE0A4C00F10A55 /* RecordsViewController.m */,
+				032B5F9F1D4A747F00A11338 /* PHistoryViewController.h */,
+				032B5FA01D4A747F00A11338 /* PHistoryViewController.m */,
 				2F1804061CEA62790002ECBC /* CKCalendarInstance.h */,
 				2F1804071CEA62790002ECBC /* CKCalendarInstance.m */,
 				2FD5A5251CE62F6100912D21 /* Main.storyboard */,
@@ -490,6 +495,7 @@
 				2F18040B1CEA71660002ECBC /* DoctorSetupViewController.m in Sources */,
 				9CEC25C81CE6409500CB1993 /* CustomerHomeViewController.m in Sources */,
 				9CA86B3C1CEA264600CB00F9 /* DoctorCategoryCollectionViewCell.m in Sources */,
+				032B5FA11D4A747F00A11338 /* PHistoryViewController.m in Sources */,
 				9CFAEDF51CEBD00600AB4F4E /* AppointmentListTableViewController.m in Sources */,
 				9CA86B461CEA37D800CB00F9 /* DoctorDetailViewController.m in Sources */,
 				2FBD75FE1CE66CD800BC6095 /* MBProgressHUD.m in Sources */,

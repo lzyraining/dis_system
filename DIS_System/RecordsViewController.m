@@ -7,6 +7,7 @@
 //
 
 #import "RecordsViewController.h"
+#import "PHistoryViewController.h"
 
 @interface RecordsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *patientTbView;
@@ -85,12 +86,12 @@
     return @"Patients illnewss history";
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSDictionary *dict = [_patientCase objectAtIndex:indexPath.row];
-//    AddPCaseViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"AddPCaseViewController"];
-//    controller.pCaseId = [dict valueForKey:@"objectId"];
-//    [self.navigationController pushViewController:controller animated:YES];
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PHistoryViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PHistoryViewController"];
+    controller.pName = [_patientData objectAtIndex:indexPath.row];
+    controller.pMobile = [_patientList objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:controller animated:YES];
+}
 
 #pragma mark- SearchBar Delegate Method 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
