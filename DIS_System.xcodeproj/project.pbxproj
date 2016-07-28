@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2397265E1D4A7D4B008F5621 /* PatientHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2397265D1D4A7D4B008F5621 /* PatientHistoryViewController.m */; };
 		23AAD9BC1D49A93E00D94E44 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AAD9BB1D49A93E00D94E44 /* MapKit.framework */; };
 		2F18040B1CEA71660002ECBC /* DoctorSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F18040A1CEA71660002ECBC /* DoctorSetupViewController.m */; };
 		2FBD75FE1CE66CD800BC6095 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FBD75FC1CE66CD800BC6095 /* MBProgressHUD.m */; };
@@ -60,6 +61,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2397265C1D4A7D4B008F5621 /* PatientHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientHistoryViewController.h; sourceTree = "<group>"; };
+		2397265D1D4A7D4B008F5621 /* PatientHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientHistoryViewController.m; sourceTree = "<group>"; };
 		23AAD9BB1D49A93E00D94E44 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2F1804061CEA62790002ECBC /* CKCalendarInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCalendarInstance.h; sourceTree = "<group>"; };
 		2F1804071CEA62790002ECBC /* CKCalendarInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarInstance.m; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 			children = (
 				9CEC25C61CE6409500CB1993 /* CustomerHomeViewController.h */,
 				9CEC25C71CE6409500CB1993 /* CustomerHomeViewController.m */,
+				2397265C1D4A7D4B008F5621 /* PatientHistoryViewController.h */,
+				2397265D1D4A7D4B008F5621 /* PatientHistoryViewController.m */,
 				9CA86B3A1CEA264600CB00F9 /* DoctorCategoryCollectionViewCell.h */,
 				9CA86B3B1CEA264600CB00F9 /* DoctorCategoryCollectionViewCell.m */,
 				9CA86B3D1CEA293500CB00F9 /* DoctorListViewController.h */,
@@ -472,6 +477,7 @@
 				9CA86B3F1CEA293500CB00F9 /* DoctorListViewController.m in Sources */,
 				9CA86B421CEA2AD700CB00F9 /* DoctorListTableViewCell.m in Sources */,
 				2FE720BB1CEE0A1E00F10A55 /* ReviewViewController.m in Sources */,
+				2397265E1D4A7D4B008F5621 /* PatientHistoryViewController.m in Sources */,
 				2FD5A51E1CE62F6100912D21 /* main.m in Sources */,
 				2FE720BE1CEE0A4C00F10A55 /* RecordsViewController.m in Sources */,
 				9CA86B7C1CEB615600CB00F9 /* AppointmentViewController.m in Sources */,
