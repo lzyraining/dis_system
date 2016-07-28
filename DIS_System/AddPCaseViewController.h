@@ -10,4 +10,6 @@
 
 @interface AddPCaseViewController : UIViewController
 
+@property (strong, nonatomic) NSString *pCaseId;
+
 @end
