@@ -12,8 +12,17 @@
 
 @interface DoctorListViewController () {
     NSArray *doctorArr;
+    CLGeocoder *geocoder;
 }
+
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+- (IBAction)mapBtn_Tapped:(UIBarButtonItem *)sender;
+@property (weak, nonatomic) IBOutlet UIView *filpView;
+@property (strong, nonatomic) IBOutlet UIView *listView;
+@property (strong, nonatomic) IBOutlet UIView *backMapView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *mapBtn;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) NSMutableArray *addressArray;
 
 @end
 
@@ -22,6 +31,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self prepareDataAndView];
+}
+
+-(void)prepareDataAndView{
+    _addressArray = [[NSMutableArray alloc]init];
+    _listView.frame = CGRectMake(0, 0, self.filpView.frame.size.width, self.filpView.frame.size.height);
+    [self.filpView addSubview:self.listView];
     [self fetchDoctorList];
 }
 
@@ -85,7 +101,7 @@
     cell.nameLbl.text = doctor[@"Name"];
     cell.mobileLbl.text = doctor[@"Mobile"];
     cell.addressLbl.text = doctor[@"Address"];
-    
+    [_addressArray addObject:cell.addressLbl.text];
     cell.imgView.layer.cornerRadius = cell.imgView.frame.size.width / 2.0;
     cell.imgView.clipsToBounds = YES;
     
@@ -116,4 +132,53 @@
     AppointmentListTableViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"AppointmentListTableViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }
+
+#pragma mark - MapView
+- (IBAction)mapBtn_Tapped:(UIBarButtonItem *)sender {
+    
+    if (_listView.window) {
+        [UIView transitionWithView:self.filpView duration:1.2 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+            NSLog(@"%lu",(unsigned long)[_addressArray count]);
+            for (int i = 0; i<[_addressArray count]; i++) {
+                [self revergeocoderWithAddress:[_addressArray objectAtIndex:i]];
+                NSLog(@"%@",[_addressArray objectAtIndex:i]);
+            }
+            [self.listView removeFromSuperview];
+            [self.filpView addSubview:self.backMapView];
+            _mapBtn.title = @"List";
+        } completion:nil];
+    }else{
+        [UIView transitionWithView:self.filpView duration:1.2 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+            [self.backMapView removeFromSuperview];
+            [self.filpView addSubview:self.listView];
+            _mapBtn.title = @"Map";
+        } completion:nil];
+    }
+}
+
+-(void)revergeocoderWithAddress:(NSString *)address{
+    
+    geocoder = [[CLGeocoder alloc] init];
+    
+    [geocoder geocodeAddressString:address completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        if (placemarks && [placemarks count]>0) {
+            CLPlacemark *place = [placemarks lastObject];
+            MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:place];
+            CLLocationCoordinate2D cordinate = placemark.coordinate;
+            NSLog(@"Lat: %f & Long: %f",cordinate.latitude,cordinate.longitude);
+            //[self searchLocal:placemark.location];
+            
+            MKCoordinateRegion regin = self.mapView.region;
+            regin.center = [(CLCircularRegion*)placemark.region center];
+            regin.span.longitudeDelta/=200.0;
+            regin.span.latitudeDelta/=200.0;
+            [self.mapView setRegion:regin animated:YES];
+            [self.mapView addAnnotation:placemark];
+            
+        }
+        
+        
+    }];
+}
+
 @end

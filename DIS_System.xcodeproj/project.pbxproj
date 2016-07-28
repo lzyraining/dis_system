@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23AAD9BC1D49A93E00D94E44 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AAD9BB1D49A93E00D94E44 /* MapKit.framework */; };
 		2F18040B1CEA71660002ECBC /* DoctorSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F18040A1CEA71660002ECBC /* DoctorSetupViewController.m */; };
 		2FBD75FE1CE66CD800BC6095 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FBD75FC1CE66CD800BC6095 /* MBProgressHUD.m */; };
 		2FBD76001CE66F3300BC6095 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FBD75FF1CE66F3300BC6095 /* MessageUI.framework */; };
@@ -59,6 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23AAD9BB1D49A93E00D94E44 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2F1804061CEA62790002ECBC /* CKCalendarInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCalendarInstance.h; sourceTree = "<group>"; };
 		2F1804071CEA62790002ECBC /* CKCalendarInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarInstance.m; sourceTree = "<group>"; };
 		2F1804091CEA71660002ECBC /* DoctorSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorSetupViewController.h; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23AAD9BC1D49A93E00D94E44 /* MapKit.framework in Frameworks */,
 				9CFAEDEE1CEBC18500AB4F4E /* libBolts.a in Frameworks */,
 				9CFAEDEF1CEBC18500AB4F4E /* libMBCalendarKit.a in Frameworks */,
 				9CFAEDF01CEBC18500AB4F4E /* libParse.a in Frameworks */,
@@ -262,6 +265,7 @@
 		79D7E968951D9D21DDD1D798 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23AAD9BB1D49A93E00D94E44 /* MapKit.framework */,
 				9CFAEDEB1CEBC18500AB4F4E /* libBolts.a */,
 				9CFAEDEC1CEBC18500AB4F4E /* libMBCalendarKit.a */,
 				9CFAEDED1CEBC18500AB4F4E /* libParse.a */,
