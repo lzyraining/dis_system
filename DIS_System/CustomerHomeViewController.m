@@ -28,6 +28,15 @@
 @property (strong, nonatomic) IBOutlet UIView *listView;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *masterBtn;
+@property (weak, nonatomic) IBOutlet UIButton *doctorBtn;
+@property (weak, nonatomic) IBOutlet UIButton *bothBtn;
+@property (weak, nonatomic) IBOutlet UIButton *CardioBtn;
+@property (weak, nonatomic) IBOutlet UIButton *DentistBtn;
+@property (weak, nonatomic) IBOutlet UIButton *DermaBtn;
+@property (weak, nonatomic) IBOutlet UIButton *GynecoBtn;
+@property (weak, nonatomic) IBOutlet UIButton *OphthBtn;
+@property (weak, nonatomic) IBOutlet UIButton *PsychBtn;
 
 - (IBAction)mastBtn_Tapped:(UIButton *)sender;
 - (IBAction)doctorBtn_Tapped:(UIButton *)sender;
@@ -43,9 +52,10 @@
 - (IBAction)ThurBtn_Tapped:(UIButton *)sender;
 - (IBAction)FirBtn_Tapped:(UIButton *)sender;
 - (IBAction)OKBtn_Tapped:(UIButton *)sender;
+- (IBAction)bothBtn_Tapped:(UIButton *)sender;
 
 @property (strong, nonatomic) NSMutableArray *addressArray;
-@property (strong, nonatomic) NSMutableArray *specializationArray;
+@property (strong, nonatomic) NSString *specialization;
 @property (strong, nonatomic) NSMutableArray *DayArray;
 @property (strong, nonatomic) NSString *qualification;
 
@@ -60,11 +70,12 @@
 }
 
 -(void)prepareData{
-    _specializationArray = [[NSMutableArray alloc]init];
+    _specialization = [[NSString alloc]init];
     _DayArray = [[NSMutableArray alloc]init];
     categoryArr = @[@"Cardiologist", @"Dentist", @"Dermatologist", @"Gynecologist", @"Ophthalmologist", @"Psychologist"];
     _frontCollectionView.frame = CGRectMake(0, 0, self.frontCollectionView.frame.size.width, self.frontCollectionView.frame.size.height);
     [_presentView addSubview:_frontCollectionView];
+    [self FetchAllData];
 }
 
 #pragma mark - API
@@ -73,7 +84,15 @@
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     PFQuery *query = [PFQuery queryWithClassName:@"Doctors"];
-    [query whereKey:@"Specialization" equalTo:_specializationArray];
+    if ([_qualification length]) {
+        [query whereKey:@"Qualification" equalTo:_qualification];
+    }
+    if ([_specialization length]) {
+        [query whereKey:@"Specialization" equalTo:_specialization];
+    }
+    if ([_DayArray count]) {
+        [query whereKey:@"AvailableDate" containedIn:_DayArray];
+    }
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (!error) {
@@ -222,7 +241,7 @@
             
             [UIView transitionWithView:self.presentView duration:1.2 options:UIViewAnimationOptionTransitionCurlUp animations:^{
                 
-                [self FetchAllData];
+                //[self FetchAllData];
                 [self.frontCollectionView removeFromSuperview];
                 [self.filterView removeFromSuperview];
                 [self.backMapView removeFromSuperview];
@@ -234,6 +253,7 @@
     if(item.tag == 3){
         PatientHistoryViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"PatientHistoryViewController"];
         [self.navigationController pushViewController:controller animated:YES];
+//        [UIView transitionFromView:self.view toView:controller.view duration:1.2 options:UIViewAnimationOptionTransitionCurlUp completion:nil];
     }
 }
 
@@ -265,75 +285,110 @@
 #pragma mark - Button
 
 - (IBAction)mastBtn_Tapped:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    if (sender.selected == YES) {
-        _qualification = @"Master";
-    }else{
-        _qualification =nil;
-    }
+    _masterBtn = sender;
+    _masterBtn.selected = !_masterBtn.selected;
+    _qualification = nil;
+    _qualification = @"Master";
+    [_doctorBtn setSelected:NO];
+    [_bothBtn setSelected:NO];
 }
 
 - (IBAction)doctorBtn_Tapped:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    if (sender.selected == YES) {
-        _qualification =@"Doctor";
-    }else{
-        _qualification = nil;
-    }
+    _doctorBtn = sender;
+    _doctorBtn.selected = !_doctorBtn.selected;
+    _qualification = nil;
+    _qualification = @"Doctor";
+    [_masterBtn setSelected:NO];
+    [_bothBtn setSelected:NO];
+}
+
+- (IBAction)bothBtn_Tapped:(UIButton *)sender {
+    _bothBtn = sender;
+    _bothBtn.selected = !_bothBtn.selected;
+    _qualification = nil;
+    _qualification = @"Both";
+    [_masterBtn setSelected:NO];
+    [_doctorBtn setSelected:NO];
 }
 
 - (IBAction)CardioBtn_Tapped:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    if (sender.selected == YES) {
-        [_specializationArray addObject:@"Cardiologist"];
-    }else{
-        [_specializationArray removeObject:@"Cardiologist"];
-    }
+    _CardioBtn = sender;
+    _CardioBtn.selected = !_CardioBtn.selected;
+    _specialization = nil;
+    _specialization = @"Cardiologist";
+    [_DentistBtn setSelected:NO];
+    [_DermaBtn setSelected:NO];
+    [_GynecoBtn setSelected:NO];
+    [_OphthBtn setSelected:NO];
+    [_PsychBtn setSelected:NO];
 }
 
 - (IBAction)DentistBtn_Tapped:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    if (sender.selected == YES) {
-        [_specializationArray addObject:@"Dentist"];
-    }else{
-        [_specializationArray removeObject:@"Dentist"];
-    }
+    _DentistBtn = sender;
+    _DentistBtn.selected = !_DentistBtn.selected;
+    _specialization = nil;
+    _specialization = @"Dentist";
+    [_CardioBtn setSelected:NO];
+    [_DermaBtn setSelected:NO];
+    [_GynecoBtn setSelected:NO];
+    [_OphthBtn setSelected:NO];
+    [_PsychBtn setSelected:NO];
 }
 
 - (IBAction)DermaBtn_Tapped:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    if (sender.selected == YES) {
-        [_specializationArray addObject:@"Dermatologist"];
-    }else{
-        [_specializationArray removeObject:@"Dermatologist"];
-    }
+    
+    _DermaBtn = sender;
+    _DermaBtn.selected = !_DermaBtn.selected;
+    _specialization = nil;
+    _specialization = @"Dermatologist";
+    [_CardioBtn setSelected:NO];
+    [_DentistBtn setSelected:NO];
+    [_GynecoBtn setSelected:NO];
+    [_OphthBtn setSelected:NO];
+    [_PsychBtn setSelected:NO];
+    
 }
 
 - (IBAction)GynecoBtn_Tapped:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    if (sender.selected == YES) {
-        [_specializationArray addObject:@"Gynecologist"];
-    }else{
-        [_specializationArray removeObject:@"Gynecologist"];
-    }
+    
+    _GynecoBtn = sender;
+    _GynecoBtn.selected = !_GynecoBtn.selected;
+    _specialization = nil;
+    _specialization = @"Gynecologist";
+    [_CardioBtn setSelected:NO];
+    [_DentistBtn setSelected:NO];
+    [_DermaBtn setSelected:NO];
+    [_OphthBtn setSelected:NO];
+    [_PsychBtn setSelected:NO];
+    
 }
 
 - (IBAction)OphthBtn_Tapped:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    if (sender.selected == YES) {
-        [_specializationArray addObject:@"Ophthalmologist"];
-    }else{
-        [_specializationArray removeObject:@"Ophthalmologist"];
-    }
+    
+    _OphthBtn = sender;
+    _OphthBtn.selected = !_OphthBtn.selected;
+    _specialization = nil;
+    _specialization = @"Ophthalmologist";
+    [_CardioBtn setSelected:NO];
+    [_DentistBtn setSelected:NO];
+    [_DermaBtn setSelected:NO];
+    [_GynecoBtn setSelected:NO];
+    [_PsychBtn setSelected:NO];
+    
 }
 
 - (IBAction)PsychBtn_Tapped:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    if (sender.selected == YES) {
-        [_specializationArray addObject:@"Psychologist"];
-    }else{
-        [_specializationArray removeObject:@"Psychologist"];
-    }
+    
+    _PsychBtn = sender;
+    _PsychBtn.selected = !_PsychBtn.selected;
+    _specialization = nil;
+    _specialization = @"Psychologist";
+    [_CardioBtn setSelected:NO];
+    [_DentistBtn setSelected:NO];
+    [_DermaBtn setSelected:NO];
+    [_GynecoBtn setSelected:NO];
+    [_OphthBtn setSelected:NO];
+    
 }
 
 - (IBAction)MonBtn_Tapped:(UIButton *)sender {
@@ -382,7 +437,18 @@
 }
 
 - (IBAction)OKBtn_Tapped:(UIButton *)sender {
+    NSLog(@"%@",_DayArray);
+    NSLog(@"%@",_qualification);
+    NSLog(@"%@",_specialization);
     [self fetchDataWithFilterInfo];
+    [UIView transitionWithView:self.presentView duration:1.2 options:UIViewAnimationOptionTransitionCurlUp animations:^{
+        
+        [self.frontCollectionView removeFromSuperview];
+        [self.backMapView removeFromSuperview];
+        [self.filterView removeFromSuperview];
+        [self.presentView addSubview:self.listView];
+        _filterBtn_Tapped.title = @"filter";
+    } completion:nil];
 }
 
 #pragma mark - tableView
