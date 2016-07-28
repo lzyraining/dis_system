@@ -40,6 +40,7 @@ bool friFlag = false;
     _pickerArray = [NSMutableArray arrayWithObjects:@"AllDay", @"Morning", @"Afternoon", nil];
 
     // Do any additional setup after loading the view.
+    NSLog(@"%d",tueFlag);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -112,6 +113,7 @@ bool friFlag = false;
         default:
             break;
     }
+    NSLog(@"%d",tueFlag);
 }
 
 - (IBAction)setupPressed:(id)sender {

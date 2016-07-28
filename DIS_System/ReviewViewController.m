@@ -7,6 +7,7 @@
 //
 
 #import "ReviewViewController.h"
+#import "AddPCaseViewController.h"
 
 @interface ReviewViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
@@ -18,8 +19,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Reviews";
-    
+    UIBarButtonItem *addCase = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPatientCase:)];
+    self.navigationItem.rightBarButtonItem = addCase;
     // Do any additional setup after loading the view.
+}
+
+-(void)addPatientCase: (id)sender {
+    AddPCaseViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"AddPCaseViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

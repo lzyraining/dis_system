@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032B5F9E1D49CA4800A11338 /* AddPCaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032B5F9D1D49CA4800A11338 /* AddPCaseViewController.m */; };
 		2F18040B1CEA71660002ECBC /* DoctorSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F18040A1CEA71660002ECBC /* DoctorSetupViewController.m */; };
 		2FBD75FE1CE66CD800BC6095 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FBD75FC1CE66CD800BC6095 /* MBProgressHUD.m */; };
 		2FBD76001CE66F3300BC6095 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FBD75FF1CE66F3300BC6095 /* MessageUI.framework */; };
@@ -59,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		032B5F9C1D49CA4800A11338 /* AddPCaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPCaseViewController.h; sourceTree = "<group>"; };
+		032B5F9D1D49CA4800A11338 /* AddPCaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPCaseViewController.m; sourceTree = "<group>"; };
 		2F1804061CEA62790002ECBC /* CKCalendarInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCalendarInstance.h; sourceTree = "<group>"; };
 		2F1804071CEA62790002ECBC /* CKCalendarInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarInstance.m; sourceTree = "<group>"; };
 		2F1804091CEA71660002ECBC /* DoctorSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorSetupViewController.h; sourceTree = "<group>"; };
@@ -237,6 +240,8 @@
 				2FBD76031CE674EC00BC6095 /* DoctorRegisterViewController.m */,
 				2FE720B91CEE0A1E00F10A55 /* ReviewViewController.h */,
 				2FE720BA1CEE0A1E00F10A55 /* ReviewViewController.m */,
+				032B5F9C1D49CA4800A11338 /* AddPCaseViewController.h */,
+				032B5F9D1D49CA4800A11338 /* AddPCaseViewController.m */,
 				2FE720BC1CEE0A4C00F10A55 /* RecordsViewController.h */,
 				2FE720BD1CEE0A4C00F10A55 /* RecordsViewController.m */,
 				2F1804061CEA62790002ECBC /* CKCalendarInstance.h */,
@@ -468,6 +473,7 @@
 				9CA86B3F1CEA293500CB00F9 /* DoctorListViewController.m in Sources */,
 				9CA86B421CEA2AD700CB00F9 /* DoctorListTableViewCell.m in Sources */,
 				2FE720BB1CEE0A1E00F10A55 /* ReviewViewController.m in Sources */,
+				032B5F9E1D49CA4800A11338 /* AddPCaseViewController.m in Sources */,
 				2FD5A51E1CE62F6100912D21 /* main.m in Sources */,
 				2FE720BE1CEE0A4C00F10A55 /* RecordsViewController.m in Sources */,
 				9CA86B7C1CEB615600CB00F9 /* AppointmentViewController.m in Sources */,
