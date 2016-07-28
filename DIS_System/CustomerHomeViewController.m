@@ -42,6 +42,7 @@
 - (IBAction)WednBtn_Tapped:(UIButton *)sender;
 - (IBAction)ThurBtn_Tapped:(UIButton *)sender;
 - (IBAction)FirBtn_Tapped:(UIButton *)sender;
+- (IBAction)OKBtn_Tapped:(UIButton *)sender;
 
 @property (strong, nonatomic) NSMutableArray *addressArray;
 @property (strong, nonatomic) NSMutableArray *specializationArray;
@@ -70,6 +71,31 @@
 
 -(void)fetchDataWithFilterInfo{
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    PFQuery *query = [PFQuery queryWithClassName:@"Doctors"];
+    [query whereKey:@"Specialization" equalTo:_specializationArray];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (!error) {
+            if (![objects count]) {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:[NSString stringWithFormat:@"No doctors"] preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction  *_Nonnull action) {
+                    
+                }];
+                [alert addAction:ok];
+                [self presentViewController:alert animated:YES completion:nil];
+                return ;
+            }
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                NSLog(@"%@",objects);
+                doctorArr = objects;
+                [_tableView reloadData];
+            });
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
 }
 
 -(void)FetchAllData{
@@ -176,27 +202,31 @@
     }
 
     if(item.tag == 2){
-        if (_backMapView.window) {
+        if (_listView.window) {
             [UIView transitionWithView:self.presentView duration:1.2 options:UIViewAnimationOptionTransitionCurlUp animations:^{
-                
+                NSLog(@"%lu",(unsigned long)doctorArr.count);
+                for (int i = 0; i<[doctorArr count]; i++) {
+                    NSDictionary *doctor = [doctorArr objectAtIndex:i];
+                    
+                    [self revergeocoderWithAddress:doctor[@"Address"]];
+                    NSLog(@"%@",[_addressArray objectAtIndex:i]);
+                }
                 [self.filterView removeFromSuperview];
                 [self.frontCollectionView removeFromSuperview];
-                [self.backMapView removeFromSuperview];
-                [self.presentView addSubview:self.listView];
+                [self.listView removeFromSuperview];
+                [self.presentView addSubview:self.backMapView];
                 _filterBtn_Tapped.title = @"map";
             } completion:nil];
             
         }else{
+            
             [UIView transitionWithView:self.presentView duration:1.2 options:UIViewAnimationOptionTransitionCurlUp animations:^{
+                
                 [self FetchAllData];
-                for (int i = 0; i<[_addressArray count]; i++) {
-                    [self revergeocoderWithAddress:[_addressArray objectAtIndex:i]];
-                    NSLog(@"%@",[_addressArray objectAtIndex:i]);
-                }
                 [self.frontCollectionView removeFromSuperview];
                 [self.filterView removeFromSuperview];
-                [self.listView removeFromSuperview];
-                [self.presentView addSubview:self.backMapView];
+                [self.backMapView removeFromSuperview];
+                [self.presentView addSubview:self.listView];
                 _filterBtn_Tapped.title = @"list";
             } completion:nil];
         }
@@ -351,10 +381,14 @@
     }
 }
 
+- (IBAction)OKBtn_Tapped:(UIButton *)sender {
+    [self fetchDataWithFilterInfo];
+}
+
 #pragma mark - tableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
+    NSLog(@"%lu",(unsigned long)[doctorArr count]);
     return doctorArr.count;
     
 }
@@ -369,7 +403,6 @@
     cell.nameLbl.text = doctor[@"Name"];
     cell.mobileLbl.text = doctor[@"Mobile"];
     cell.addressLbl.text = doctor[@"Address"];
-    [_addressArray addObject:cell.addressLbl.text];
     cell.imgView.layer.cornerRadius = cell.imgView.frame.size.width / 2.0;
     cell.imgView.clipsToBounds = YES;
     

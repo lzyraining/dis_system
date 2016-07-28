@@ -242,7 +242,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <prototypes>
-                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DoctorListTableViewCell" rowHeight="101" id="iYd-aO-jfC" customClass="DoctorListTableViewCell">
+                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="101" id="iYd-aO-jfC" customClass="DoctorListTableViewCell">
                                     <rect key="frame" x="0.0" y="28" width="320" height="101"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iYd-aO-jfC" id="eTf-jp-bF6">
@@ -273,6 +273,12 @@
                                         </subviews>
                                     </tableViewCellContentView>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <outlet property="addressLbl" destination="cAY-9z-TTa" id="O36-Ea-T34"/>
+                                        <outlet property="imgView" destination="rYG-Hu-su0" id="Nxf-0c-mZu"/>
+                                        <outlet property="mobileLbl" destination="qQy-gM-pbM" id="Yso-Iw-Ecf"/>
+                                        <outlet property="nameLbl" destination="gzr-Iy-Jid" id="KZy-MA-daD"/>
+                                    </connections>
                                 </tableViewCell>
                             </prototypes>
                             <connections>
@@ -495,6 +501,16 @@
                             <state key="selected" image="checkbox_on"/>
                             <connections>
                                 <action selector="FirBtn_Tapped:" destination="vU8-mu-pDP" eventType="touchUpInside" id="a9G-9S-bU0"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2B6-be-CdJ">
+                            <rect key="frame" x="100" y="417" width="120" height="30"/>
+                            <color key="backgroundColor" red="0.070588235289999995" green="0.36470588240000001" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="OK">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="OKBtn_Tapped:" destination="vU8-mu-pDP" eventType="touchUpInside" id="1Bz-te-M4X"/>
                             </connections>
                         </button>
                     </subviews>
