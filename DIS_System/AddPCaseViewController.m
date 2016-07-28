@@ -31,6 +31,7 @@
     self.title = @"Patient Case";
     [self fetchDoctorName];
     [self setup];
+    
 }
 
 -(void)setup {
@@ -56,13 +57,15 @@
     [caseQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (!error) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
-            NSDictionary *dict = [objects lastObject];
-            _patientNameTextField.text = [dict valueForKey:@"PName"];
-            _caseNameTextField.text = [dict valueForKey:@"CaseName"];
-            _patientMobileTextField.text = [dict valueForKey:@"PMobile"];
-            _descripText.text = [dict valueForKey:@"Descrip"];
-            _presecripText.text = [dict valueForKey:@"Prescription"];
-            _suggestionText.text = [dict valueForKey:@"Suggestion"];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSDictionary *dict = [objects lastObject];
+                _patientNameTextField.text = [dict valueForKey:@"PName"];
+                _caseNameTextField.text = [dict valueForKey:@"CaseName"];
+                _patientMobileTextField.text = [dict valueForKey:@"PMobile"];
+                _descripText.text = [dict valueForKey:@"Descrip"];
+                _presecripText.text = [dict valueForKey:@"Prescription"];
+                _suggestionText.text = [dict valueForKey:@"Suggestion"];
+            });
         }
     }];
 }

@@ -24,16 +24,7 @@
     [super viewDidLoad];
     self.title = @"Patients List";
     // Do any additional setup after loading the view.
-    UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touch:)];
-    [recognizer setNumberOfTapsRequired:1];
-    [recognizer setNumberOfTouchesRequired:1];
-    [self.view addGestureRecognizer:recognizer];
 }
-
--(void)touch: (id)sender {
-    [_searchBar resignFirstResponder];
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
