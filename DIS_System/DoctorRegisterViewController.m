@@ -146,10 +146,6 @@
 
 
 
-
-
-
-
 #pragma mark- image picker
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString * ,id> *)info{
